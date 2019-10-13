@@ -1,2 +1,2 @@
-# end2endAC
-Audio samples for the paper "End-to-end Accent Conversion"
+# End-to-end Accent Conversion samples
+Samples are in https://liusongxiang.github.io/end2endAC/
