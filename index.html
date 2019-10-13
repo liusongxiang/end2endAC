@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://light1726.github.io/voice_conversion_demo/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>End-to-End Accent Conversion Demo</title>
+	</head>
+	<body><h2 >Audio Samples from "End-to-End Accent Conversion"</h2>
+	<!-- <h2 align="center">Songxiang Liu, Helen Meng</h2> -->
+	<p><strong>Authors: </strong>Songxiang Liu, Disong Wang, Yuewen Cao, Lifa Sun, Xixin Wu, Shiyin Kang, Xunying Liu and Helen Meng</p>
+	<p><strong>Abstract: </strong>Techniques for accent conversion (AC) aim to convert non-native-accented speech to native-accented one, without changing the voice. Previous AC methods require native-accented reference utterances during accent conversion, which hinders their practical usage in real-world applications. In this paper, we present an end-to-end framework for AC. An accented automatic speech recognition (ASR) model is used to extract linguistic representations from non-native-accented utterances. A speaker encoder is trained using a speaker-discriminative loss to generate speaker representation of a non-native-accented speaker. A multi-speaker text-to-speech (TTS) synthesis model is adopted to generate converted speech from the linguistic representations, conditioned on the speaker representation. Experimental results show that the proposed system can convert Hindi-accented English speech into accent-free one with high speech naturalness, which is indistinguishable from native speech in accent.  </p>
+<hr>
+
+<h2>System Description</h3>
+<p><strong>Baseline:</strong> L2 PPGs are first converted to L1 PPGs, from which get the converted speech.</p>
+<p><strong>Proposed:</strong> The proposed end-to-end accent conversion approach.</p>
+<p><strong>Ablation:</strong> Remove the accent embedding and accent classification from the proposed approach.</p>
+
+<hr>
+
+<h2>System Comparison</h3>
+
+<p>1. Text content: "Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob."</p>
+<table style="width:100%">
+<tbody>
+	<tr>
+	<th>Non-native Accented Speech</th>
+	</tr>
+	<tr>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_003.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+	</tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_003.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th> 
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_003.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_003.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+	  </tr>
+	  </tbody></table>  
+
+<p>2. Text content: "We also need a small plastic snake and a big toy frog for the kids."</p>
+<table style="width:100%">
+<tbody>
+	<tr>
+	<th>Non-native Accented Speech</th>
+	</tr>
+	<tr>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_004.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+	</tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_004.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th> 
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_004.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_004.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+	  </tr>
+	  </tbody></table>  
+
+<p>3. Text content: "She is given a new deputy minister for transport and planning."</p>
+<table style="width:100%">
+<tbody>
+	<tr>
+	<th>Non-native Accented Speech</th>
+	</tr>
+	<tr>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_025.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+	</tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_025.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th> 
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_025.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_025.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+	  </tr>
+	  </tbody></table> 
+
+<p>4. Text content: "We must provide a long-term solution to tackle this attitude."</p>
+<table style="width:100%">
+<tbody>
+	<tr>
+	<th>Non-native Accented Speech</th>
+	</tr>
+	<tr>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_037.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+	</tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_037.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th> 
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_037.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_037.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+	  </tr>
+	  </tbody></table> 
+
+<p>5. Text content: "She is believed to be in South Africa."</p>
+<table style="width:100%">
+<tbody>
+	<tr>
+	<th>Non-native Accented Speech</th>
+	</tr>
+	<tr>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_041.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+	</tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_041.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th> 
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_041.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_041.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+	  </tr>
+	  </tbody></table> 
+
+<p>6. Text content: "That's all right then."</p>
+<table style="width:100%">
+<tbody>
+	<tr>
+	<th>Non-native Accented Speech</th>
+	</tr>
+	<tr>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_099.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+	</tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_099.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th> 
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_099.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+		<th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_099.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+		</th>
+	  </tr>
+	  </tbody></table> 
+
+<p>7. Text content: "Health Secretary Frank Dobson made the surprise announcement in the Commons yesterday."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_106.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_106.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_106.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_106.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table> 
+
+<p>8. Text content: "I had relied on him."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_130.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_130.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_130.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_130.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+<p>9. Text content: "He sees a difference in the style of the two teams."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_142.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_142.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_142.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_142.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+<p>10. Text content: "There is a lack of chemistry."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_145.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_145.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_145.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_145.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+<p>11. Text content: "That could mean the difference between life and death in action."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_147.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_147.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_147.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_147.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+<p>12. Text content: "It wasn't to be."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_195.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_195.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_195.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_195.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+<p>13. Text content: "It's just awful."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_203.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_203.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_203.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_203.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+<p>14. Text content: "It is set in Paris."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_233.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_233.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_233.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_233.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+
+<p>15. Text content: "It is no surprise."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_239.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_239.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_239.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_239.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+<p>16. Text content: "It is also very valuable."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_260.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_260.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_260.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_260.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+<p>17. Text content: "SCOTLAND has shown the way."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_299.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_299.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_299.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_299.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+<p>18. Text content: "It's the last thing on my mind."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_339.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_339.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_339.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_339.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+<p>19. Text content: "To do so he reckons that a good opening result is essential."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_353.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_353.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_353.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_353.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+<p>19. Text content: "We have to be sure that the taxation system can work."</p>
+<table style="width:100%">
+<tbody><tr><th>Non-native Accented Speech</th></tr>
+	<tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/L2/p248_358.wav" type="audio/mpeg">
+				Your browser does not support the audio element.</audio></th></tr>
+</tbody>
+</table>
+	  <table style="width:100%">
+	  <tbody><tr>
+		<th>Baseline</th>
+        <th>Ablation</th>
+        <th>Proposed</th>
+	  </tr>
+	  <tr><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/baseline/accvc_p248_358.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th> <th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/ablation/accvc_p248_358.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th><th>
+				<audio controls="" style="width: 200px;">
+				  <source src="./wavs/propose/accvc_p248_358.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio></th></tr>
+	  </tbody></table>
+
+</body></html>
